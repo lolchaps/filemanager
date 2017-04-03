@@ -1,0 +1,44 @@
+body {
+	background-color: #424242;
+}
+
+.grey .darken-3 {
+	background-color: #424242 !important;
+}
+
+.breadcrumb {
+    background-color: #424242;
+    color: #fafafa;
+}
+
+.breadcrumb>.active {
+    color: #fafafa;
+}
+
+a:focus, a:hover {
+    color: #fafafa;
+}
+
+a {
+    color: #fafafa;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+     background-color: #000; 
+}
+
+.nav>li {
+    background-color: #000;
+}
+
+.p-0 {
+	padding: 0;
+}
+
+.breadcrumb>li+li:before {
+    content: "\003e";
+}
+
+.file-content {
+	padding: 20px;
+}
