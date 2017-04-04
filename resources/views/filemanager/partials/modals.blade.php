@@ -131,7 +131,7 @@
               <input type="file" id="file" name="file">
             </div>
           </div>
-          <div class="form-group">
+          {{-- <div class="form-group">
             <label for="file_name" class="col-sm-3 control-label">
               Optional Filename
             </label>
@@ -139,7 +139,7 @@
               <input type="text" id="file_name" name="file_name"
                      class="form-control">
             </div>
-          </div>
+          </div> --}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">
