@@ -43,50 +43,47 @@
         </aside>
       </div>
 
-      <div class="col-sm-10" style="background-color: black; height: 500px; border: 10px solid #757575;">
+      <div class="col-sm-10" style="background-color: black; height: 100%; border: 10px solid #757575;">
         {{-- The Files --}}
         <div class="file-content">
-          @foreach ($files as $file)
-            <div class="row">
-              @if (is_image($file['mimeType']))
-                <div class="col-sm-4">
-                  <div class="thumbnail">
-                    <a href="{{ $file['webPath'] }}">
-                      <img src="{{ $file['webPath'] }}" alt="" style="width:100%">
-                      <div class="caption">
-                        <p>{{ $file['name'] }}</p>
-                      </div>
-                    </a>
+          <div class="row">
+            @foreach ($files as $file)
+                @if (is_image($file['mimeType']))
+                  <div class="col-sm-4">
+                    <div class="thumbnail">
+                      <a href="{{ $file['webPath'] }}">
+                        <img src="{{ $file['webPath'] }}" alt="" style="width:100%; height: 100px;">
+                        <div class="caption">
+                          <p>{{ $file['name'] }}</p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              @endif
-
-              @if (is_video($file['mimeType']))
-                <div class="col-sm-4">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="{{ $file['webPath'] }}"></iframe>
+                @elseif (is_video($file['mimeType']))
+                  <div class="col-sm-4">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="{{ $file['webPath'] }}"></iframe>
+                    </div>
+                    <p style="color: white">
+                      {{ $file['name'] }}
+                    </p>
                   </div>
-                  <p style="color: white">
-                    {{ $file['name'] }}
-                  </p>
-                </div>
-              @endif
-
-              @if (is_application($file['mimeType']))
-                <div class="col-sm-4">
-                  <div class="thumbnail">
-                    <a href="{{ $file['webPath'] }}">
-                      <img src="/img/pdf.jpg" alt="" style="width:100%">
-                      <div class="caption">
-                        <p>{{ $file['name'] }}</p>
-                      </div>
-                    </a>
+                @elseif (is_application($file['mimeType']))
+                  <div class="col-sm-4">
+                    <div class="thumbnail">
+                      <a href="{{ $file['webPath'] }}">
+                        <img src="/img/pdf.jpg" alt="" style="width:100%; height: 100px;">
+                        <div class="caption">
+                          <p>{{ $file['name'] }}</p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              @endif
-
-            </div>
-          @endforeach
+                @else
+                  NOT YET AVAILABLE
+                @endif
+            @endforeach
+          </div>
         </div>
         
       </div>
